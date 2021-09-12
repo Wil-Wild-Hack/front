@@ -31,7 +31,7 @@ const OneForm = () => {
 
     axios({
       method: "POST",
-      url: `https://34.83.193.123:8000/process`,
+      url: `http://34.83.193.123:8000/process`,
       data: formData,
       headers: { "Content-Type": "multipart/form-data" },
     })
