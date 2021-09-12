@@ -31,7 +31,7 @@ const OneForm = () => {
 
     axios({
       method: "POST",
-      url: `http://34.83.193.123:8000/process`,
+      url: `https://34.83.193.123:8000/process`,
       // crossdomain: true,
       data: formData,
     })
