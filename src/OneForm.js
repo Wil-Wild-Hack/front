@@ -15,23 +15,39 @@ const OneForm = () => {
 
     // window.location.replace("https://www.google.com/");
 
-    const link = "inception_cut.mp4";
-    history.push({
-      pathname: "/result",
-      state: {
-        data: link,
-      },
-    });
+    // const link = "inception_cut.mp4";
+    // history.push({
+    //   pathname: "/result",
+    //   state: {
+    //     data: link,
+    //   },
+    // });
 
-    axios
-      .post("UPLOAD_URL", formData)
+    // axios
+    //   .post("http://34.83.193.123:8000/process", formData)
+
+    axios.defaults.headers.post["Content-Type"] =
+      "application/x-www-form-urlencoded";
+
+    axios({
+      method: "POST",
+      url: `http://34.83.193.123:8000/process`,
+      // crossdomain: true,
+      data: formData,
+    })
       .then((res) => {
+        history.push({
+          pathname: "/result",
+          state: {
+            data: res.data,
+          },
+        });
         // window.location.replace("/result");
         // alert("File Upload success");
       })
       .catch((err) => {
         // window.location.replace("/result");
-        // console.log("File Upload Error");
+        alert("File Upload Error");
       }); //alert
   };
 
