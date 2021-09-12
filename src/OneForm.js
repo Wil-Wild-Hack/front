@@ -26,9 +26,8 @@ const OneForm = () => {
     // axios
     //   .post("http://34.83.193.123:8000/process", formData)
 
-    // axios.defaults.headers.post["Content-Type"] =
-    //   "application/x-www-form-urlencoded";
-
+    axios.defaults.headers.post["Content-Type"] =
+      "application/x-www-form-urlencoded";
     axios({
       method: "POST",
       url: `http://34.83.193.123:8000/process`,
