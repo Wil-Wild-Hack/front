@@ -3,51 +3,51 @@ import FileUploader from "./FileUploader";
 import axios from "axios";
 import ProgressBar from "./ProgressBar";
 import { Link, useHistory } from "react-router-dom";
+// import FileDownload from "js-file-download";
 
 const OneForm = () => {
   const [selectedFile, setSelectedFile] = useState(null);
 
   const history = useHistory();
 
-  const submitForm = () => {
+  const submitForm = async (file) => {
     const formData = new FormData();
-    formData.append("file", selectedFile);
+    formData.append("file", file);
 
-    // window.location.replace("https://www.google.com/");
-
-    // const link = "inception_cut.mp4";
-    // history.push({
-    //   pathname: "/result",
-    //   state: {
-    //     data: link,
-    //   },
-    // });
-
-    // axios
-    //   .post("http://34.83.193.123:8000/process", formData)
+    // console.log("formData", formData, "file:", file);
 
     axios.defaults.headers.post["Content-Type"] =
       "application/x-www-form-urlencoded";
-    axios({
+    await axios({
       method: "POST",
-      url: `http://34.83.193.123:8000/process`,
+      url: `http://34.83.193.123:8000/process_new`,
       data: formData,
       headers: { "Content-Type": "multipart/form-data" },
+      responseType: "blob",
     })
-      .then((res) => {
+      // .then((res) => {
+      //   console.log(res.data);
+      // })
+      .then((response) => {
+        const url = window.URL.createObjectURL(new Blob([response.data]));
         history.push({
           pathname: "/result",
           state: {
-            data: res.data,
+            data: url,
           },
         });
-        // window.location.replace("/result");
-        // alert("File Upload success");
       })
+      // history.push({
+      //   pathname: "/result",
+      //   state: {
+      //     data: url,
+      //   },
+      // });
+      // console.log(res.data);
+      //})
       .catch((err) => {
-        // window.location.replace("/result");
         alert("File Upload Error");
-      }); //alert
+      });
   };
 
   return (
@@ -56,7 +56,8 @@ const OneForm = () => {
         <FileUploader
           onFileSelectSuccess={(file) => {
             setSelectedFile(file);
-            submitForm();
+            // console.log("FileUploader", file);
+            submitForm(file);
           }}
         />
       </div>

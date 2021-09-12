@@ -186,9 +186,10 @@ header a:hover {
   transform: translateY(-8px);
 }
 
-/* Social Icons */
+/* Button */
 
 header .upload-button {
+  cursor: pointer;
   color: #000000;
   font-size: 18px;
   text-decoration: none;
@@ -199,6 +200,14 @@ header .upload-button {
   padding: 12px 48px;
   display: inline-block;
   transition: 300ms;
+}
+
+header .upload-button:hover {
+  background: #979797;
+}
+
+header label {
+  cursor: pointer;
 }
 
 .social-icons {
@@ -233,10 +242,23 @@ header .progress-bar {
 
 header .hero-image img {
   position: flex;
-  height: 600px;
+  width: 300px;
+  margin-right: 20px;
   /* width: 300px; */
   /* left: -auto; */
   top: 24px;
+}
+
+header .loading img {
+  /* visibility: hidden; */
+  position: flex;
+  justify-content: center;
+  margin-left: 70px;
+  margin-top: 20px;
+  height: 100px;
+  /* width: 300px; */
+  /* left: -auto; */
+  /* top: 24px; */
 }
 
 /* header .hero-image img:hover {

@@ -26,7 +26,11 @@ const Home = () => {
               </p>
               <OneForm />
             </div>
-            <div class="hero-image">
+            {/* <div className="loading">
+              <img src="loading.gif" alt="" />
+            </div> */}
+            <div className="hero-image">
+              {/* <img src="dancing.png" alt="" /> */}
               <img src="dancing.png" alt="" />
               <img src="dancing.png" alt="" />
             </div>

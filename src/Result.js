@@ -6,6 +6,7 @@ import { withRouter, useHistory } from "react-router-dom";
 const Result = (props) => {
   const history = useHistory();
   const link = history.location.state?.data;
+  console.log(link);
 
   return (
     <div>
@@ -13,7 +14,7 @@ const Result = (props) => {
         <div class="wrapper">
           <nav>
             <a href="/">
-              <div class="logo">Inseption</div>
+              <div className="logo">Inseption</div>
             </a>
           </nav>
         </div>
