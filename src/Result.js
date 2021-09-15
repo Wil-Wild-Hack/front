@@ -27,12 +27,22 @@ const Result = (props) => {
                 className="react-player fixed-bottom"
                 url={link}
                 playing={true}
+                loop={true}
                 width="100%"
                 height="100%"
                 controls={true}
               />
             </div>
           </header>
+          <div>
+            <ul>
+              <li>Box</li>
+              <li>Dance</li>
+              <li>Jack</li>
+              <li>Taekwondo</li>
+              <li>Squats</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

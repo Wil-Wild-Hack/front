@@ -77,10 +77,6 @@ nav {
   height: 72px;
 }
 
-/* nav ul {
-  display: flex;
-} */
-
 nav .logo {
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -94,7 +90,32 @@ nav .logo {
     width: 100%;
   }
   nav .logo {
-    padding-left: 40px;
+    padding-left: 20px;
+  }
+
+  header h1 {
+    margin-top: 25px;
+    font-size: 25px;
+  }
+
+  header {
+    display: block;
+    align-items: left;
+  }
+
+  header h1 {
+    margin-top: 25px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35px;
+    padding-left: 20px;
+  }
+  header p {
+    padding-left: 20px;
+  }
+
+  header .upload-button {
+    margin-left: 20px;
   }
 
   header .hero-image img {
@@ -132,7 +153,22 @@ nav .logo {
   height: calc(100vh - 72px);
   display: flex;
   align-items: center;
-  padding: 40px;
+}
+
+.header-container ul {
+  margin-top: 20px;
+  display: flex;
+  color: #ffffff;
+}
+
+.header-container li {
+  text-align: justify;
+  /* justify-items: center;
+  justify-content: center; */
+  display: inline-block;
+  width: 100%;
+  /* align-items: center; */
+  /* justify-content: space-between; */
 }
 
 header {
@@ -142,15 +178,16 @@ header {
 }
 
 header h1 {
+  margin-top: 50px;
   font-weight: 900;
-  font-size: 64px;
-  line-height: 75px;
+  font-size: 65px;
+  line-height: 65px;
   color: #ffffff;
   margin-bottom: 24px;
 }
 
 header p {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 30px;
   color: #ffffffff;
   width: 418px;
@@ -242,7 +279,7 @@ header .progress-bar {
 
 header .hero-image img {
   position: flex;
-  width: 300px;
+  width: 250px;
   margin-right: 20px;
   /* width: 300px; */
   /* left: -auto; */
